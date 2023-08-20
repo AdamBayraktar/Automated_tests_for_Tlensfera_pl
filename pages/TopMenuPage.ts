@@ -28,5 +28,35 @@ export class TopMenuPage{
     async assertPageMenuItemHighlights(){
         // assert if the menu item has active color
     }
+    
+    async assertHomePageUrl(){
+        await expect(this.page).toHaveURL('https://www.tlensfera.pl/')
+    }
 
+    async assertAboutUsPageUrl(){
+        await expect(this.page).toHaveURL('https://www.tlensfera.pl/o-nas/')
+    }
+
+    async assertServicesPageUrl(){
+        await expect(this.page).toHaveURL('https://www.tlensfera.pl/uslugi/')
+    }
+
+    async assertPricingPageUrl(){
+        await expect(this.page).toHaveURL('https://www.tlensfera.pl/cennik/')
+    }
+
+    async assertContactPageUrl(){
+        await expect(this.page).toHaveURL('https://www.tlensfera.pl/kontakt/')
+    }
+
+    async assertFacebookLink(){
+        await this.facebookLink.click()
+        await expect(this.page).toHaveURL('https://www.facebook.com/TlenSferaGniezno')
+    }
+
+    async assertInstagramLink(){
+        await this.instagramLink.click()
+        await expect(this.page).toHaveURL('https://www.instagram.com/tlensferagniezno/')
+    }
+    
 }
